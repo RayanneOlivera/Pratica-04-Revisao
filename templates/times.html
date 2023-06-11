@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Times</title>
+</head>
+<body>
+    <h1>Times</h1>
+    <ul>
+        {% for time in times %}
+            <li>
+                <a href="{{ url_for('ver_time', id=time['id']) }}">{{ time['nome'] }}</a>
+                <a href="{{ url_for('editar_time', id=time['id']) }}">(Editar)</a>
+                <form action="{{ url_for('excluir_time', id=time['id']) }}" method="post" style="display: inline-block;">
+                    <input type="submit" value="Excluir" onclick="return confirm('Tem certeza que deseja excluir este time?')">
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

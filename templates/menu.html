@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menu</title>
+</head>
+<body>
+    <ul>
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('listar_times') }}">Times</a></li>
+        <li><a href="{{ url_for('cadastrar_time') }}">Cadastrar Time</a></li>
+    </ul>
+    {% block content %}{% endblock %}
+</body>
+</html>
